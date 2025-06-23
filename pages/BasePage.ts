@@ -37,6 +37,7 @@ export class BasePage {
     }
   }
 
+  // Scroll to the middle of the page
   async scrollToMiddle(): Promise<void> {
     await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
     await this.page.waitForTimeout(2000);

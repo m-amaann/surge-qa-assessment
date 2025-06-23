@@ -28,10 +28,10 @@ export const testConfig = {
 
 // Simple static selectors
 export const selectors = {
-  similarItemsSection: '.x-similar-items',
-  similarItemCards: '.x-similar-item',
+  similarItemsSection: '#placement101875',
+  similarItemCards:  '.hVQz.Cssx .Mgpb.rgAU',
   itemTitle: '.x-item-title-link',
   itemPrice: '.notranslate',
   itemImage: '.item-image img',
-  seeAllLink: '#PicturePanel [data-testid="x-atf-left-bottom-river"] .EGf- MuPu:visible a:has-text("See all")'
+  seeAllLink: '#PicturePanel [data-testid="x-atf-left-bottom-river"] .EGf-MuPu:visible a:has-text("See all")'
 };

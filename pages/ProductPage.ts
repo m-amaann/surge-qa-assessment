@@ -18,7 +18,7 @@ export class ProductPage extends BasePage {
   }
 
   async scrollToSimilarItemsSection(): Promise<void> {
-    console.log('🔍 Looking for similar items...');
+    console.log('Looking for similar items...');
     await this.scrollToMiddle();
   }
 
@@ -30,7 +30,7 @@ export class ProductPage extends BasePage {
     try {
       const items = this.page.locator(selectors.similarItemCards);
       const count = await items.count();
-      console.log(`📊 Found ${count} similar items`);
+      console.log(`Found ${count} similar items`);
       return count;
     } catch {
       return 0;
@@ -42,7 +42,7 @@ export class ProductPage extends BasePage {
     const count = await items.count();
     const itemsData: SimilarItem[] = [];
 
-    for (let i = 0; i < Math.min(count, 6); i++) {
+    for (let i = 0; i < Math.min(count, 4); i++) {
       try {
         const item = items.nth(i);
         const title = await item.locator(selectors.itemTitle).textContent() || 'No title';

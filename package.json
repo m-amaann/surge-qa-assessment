@@ -2,11 +2,32 @@
   "name": "surge-qa-assessment",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+
+    "test:smoke": "playwright test tests/smoke.spec.ts",
+    "test:ebay": "playwright test tests/ebay-similar-items.spec.ts",
+    "test:mobile": "playwright test tests/mobile.spec.ts",
+    "test:performance": "playwright test tests/performance.spec.ts",
+
+    "test:allure": "playwright test --reporter=allure-playwright",
+    "allure:generate": "allure generate allure-results --clean --output allure-report",
+    "allure:serve": "allure serve allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clean": "rm -rf allure-results allure-report",
+    "install:browsers": "playwright install",
+    "install:allure": "npm install -g allure-commandline",
+
+    "clean": "rm -rf test-results playwright-report allure-results allure-report",
+    "ci": "npm run clean && npm run test:allure && npm run allure:generate"
+  },
+  "keywords": ["playwright", "automation", "testing", "ebay", "allure", "typescript", "qa"],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "eBay Similar Items - QA Automation Framework with Playwright & Allure",
   "devDependencies": {
     "@playwright/test": "^1.53.1",
     "@types/node": "^24.0.3"

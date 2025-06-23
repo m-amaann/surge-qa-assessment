@@ -125,24 +125,7 @@ npm run allure:open
 ## 📁 Project Structure
 
 ```
-surge-qa-assessment/
-├── tests/
-│   ├── fixtures/
-│   │   └── test-data.ts              # Test data & selectors
-│   ├── pages/
-│   │   └── ProductPage.ts            # Page Object Model
-│   ├── types/
-│   │   └── test-types.ts             # TypeScript interfaces
-│   ├── smoke.spec.ts                 # Setup verification tests
-│   ├── ebay-similar-items.spec.ts    # Main automation tests
-│   ├── mobile.spec.ts                # Mobile responsiveness
-│   └── performance.spec.ts           # Performance testing
-├── allure-results/                   # Test results
-├── test-results/                     # Screenshots & videos
-├── .github/workflows/                # CI/CD pipeline
-├── playwright.config.ts              # Framework configuration
-├── package.json                      # Dependencies & scripts
-└── README.md                         # This file
+
 ```
 
 ---

@@ -22,21 +22,21 @@ export default defineConfig({
   reporter: [
     ['json', { outputFile: 'test-results/results.json' }],
     ['junit', { outputFile: 'test-results/results.xml' }],
-    ['allure-playwright', {
-      detail: true,
-      outputFolder: 'allure-results',
-      suiteTitle: false,
-      environmentInfo: {
-        Framework: 'Playwright',
-        Language: 'TypeScript',
-        TestType: 'E2E Automation',
-        Application: 'eBay Similar Items',
-        Environment: process.env.NODE_ENV || 'test',
-        Browser: 'Multi-browser Testing',
-        OS: process.platform,
-        NodeVersion: process.version
-      }
-    }]
+    // ['allure-playwright', {
+    //   detail: true,
+    //   outputFolder: 'allure-results',
+    //   suiteTitle: false,
+    //   environmentInfo: {
+    //     Framework: 'Playwright',
+    //     Language: 'TypeScript',
+    //     TestType: 'E2E Automation',
+    //     Application: 'eBay Similar Items',
+    //     Environment: process.env.NODE_ENV || 'test',
+    //     Browser: 'Multi-browser Testing',
+    //     OS: process.platform,
+    //     NodeVersion: process.version
+    //   }
+    // }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

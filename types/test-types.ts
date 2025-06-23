@@ -22,10 +22,3 @@ export interface CategoryValidation {
   total: number;
   percentage: number;
 }
-
-export interface PriceValidation {
-  itemsInRange: number;
-  totalItems: number;
-  percentage: number;
-  averagePrice: number;
-}

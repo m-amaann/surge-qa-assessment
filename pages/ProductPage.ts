@@ -11,25 +11,32 @@ export class ProductPage extends BasePage {
     }
   }
 
+  // Verify that the product page has loaded
   async verifyProductPageLoaded(): Promise<boolean> {
     const title = await this.getTitle();
     const url = await this.getURL();
     return title.includes('eBay') && url.includes('ebay.com');
   }
 
+  // Scroll to the middle of the page to load similar items
   async scrollToSimilarItemsSection(): Promise<void> {
     console.log('Looking for similar items...');
     await this.scrollToMiddle();
   }
 
+  // Check if the similar items section is visible
   async isSimilarItemsSectionVisible(): Promise<boolean> {
     return await this.isElementVisible(selectors.similarItemsSection);
   }
 
+
+  // Get the count of similar items displayed
   async getSimilarItemsCount(): Promise<number> {
     try {
       const items = this.page.locator(selectors.similarItemCards);
+      await this.page.waitForTimeout(2000); // Wait for items to load
       const count = await items.count();
+      await this.page.waitForTimeout(2000); // Wait for items to load
       console.log(`Found ${count} similar items`);
       return count;
     } catch {

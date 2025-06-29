@@ -14,6 +14,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
   test('TC001: Similar Items Section Display', async ({ page }) => {
     
+    // Navigate to the product page
     await productPage.navigateToProduct(testData.walletProduct.url);
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(4000); //  wait loaded
@@ -22,7 +23,9 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
     const sectionVisible = await productPage.isSimilarItemsSectionVisible();
     expect(sectionVisible).toBeTruthy();
     
+    // Check if similar items are displayed
     const itemsCount = await productPage.getSimilarItemsCount();
+    await page.waitForTimeout(4000); // wait for items to load
     expect(itemsCount).toBeGreaterThan(0);
     expect(itemsCount).toBeLessThanOrEqual(4);
     
@@ -43,20 +46,26 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
     expect(items).toBeDefined();
     expect(items.length).toBeGreaterThan(0);
     
+    // Validate categories of similar items
     const categoryValidation = await productPage.validateItemCategories(items);
     expect(categoryValidation.percentage).toBeGreaterThan(30);
     
-    console.log(`TC002 PASSED: ${categoryValidation.percentage.toFixed(1)}% category match`);
+    console.log(`TC002: ${categoryValidation.percentage.toFixed(1)}% category match`);
   });
 
 
 
   test('TC003: Price Range Validation', async ({ page }) => {
-    console.log('🧪 TC003: Price Range Validation');
     
+    // Navigate to the product page
     await productPage.navigateToProduct(testData.walletProduct.url);
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(4000); // wait loaded
+    
+    // Scroll to the similar items section
     await productPage.scrollToSimilarItemsSection();
     
+    // Get similar items and validate their prices
     const items = await productPage.getSimilarItems();
     const validatedItems = await productPage.validatePriceRange(items, 15.00);
     

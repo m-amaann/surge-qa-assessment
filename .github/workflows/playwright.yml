@@ -34,24 +34,3 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-        
-    - name: Install Allure CLI (for reporting only)
-      if: always()
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y openjdk-11-jdk
-        npm install -g allure-commandline
-        
-    - name: Generate Allure Report
-      if: always()
-      run: |
-        npx playwright test --reporter=allure-playwright
-        allure generate allure-results --clean --output allure-report
-        
-    - name: Upload Allure Report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: allure-report
-        path: allure-report/
-        retention-days: 30

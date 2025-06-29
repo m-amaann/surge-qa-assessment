@@ -170,38 +170,6 @@ npx playwright test --project="Mobile Chrome"
 npx playwright test
 ```
 
----
-
-## Troubleshooting
-
-### Common Issues & Solutions
-
-**❌ Browsers not installed**
-```bash
-npx playwright install --force
-```
-
-**❌ Tests failing**
-```bash
-# Check eBay page manually
-npm run test:headed
-
-# Update selectors if needed
-nano tests/fixtures/test-data.ts
-```
-
-**❌ Allure not working**
-```bash
-# Install Java first, then:
-npm install -g allure-commandline
-```
-
-**❌ Dependencies issues**
-```bash
-# Clean reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
 
 ---
 
@@ -281,8 +249,3 @@ This automation framework provides:
 **Assessment Status**: Complete  
 **Framework Version**: 2.0.0  
 **Last Updated**: June 2025
-
-EOF
-
-echo "QA Assessment README created!"
-echo "📋 File created with organized sections for easy review"

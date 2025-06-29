@@ -125,7 +125,7 @@ export class ProductPage extends BasePage {
 
   async checkMobileResponsiveness(): Promise<boolean> {
     await this.page.setViewportSize({ width: 375, height: 667 });
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(3000);
     return await this.isSimilarItemsSectionVisible();
   }
 }

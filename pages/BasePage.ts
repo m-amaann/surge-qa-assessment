@@ -10,6 +10,7 @@ export class BasePage {
   async navigateTo(url: string): Promise<void> {
     console.log(`Navigate: ${url}`);
     await this.page.goto(url, { waitUntil: 'networkidle' });
+    await this.page.waitForTimeout(2000); // Wait for 2 seconds to ensure the page is fully loaded
   }
 
   async getTitle(): Promise<string> {

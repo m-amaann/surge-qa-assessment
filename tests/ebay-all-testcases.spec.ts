@@ -110,6 +110,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
 
 
+
   test('TC006: Content Quality', async ({ page }) => {
     console.log('🧪 TC006: Content Quality');
     
@@ -130,6 +131,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
 
 
+
   test('TC007: See All Link', async ({ page }) => {
     console.log('🧪 TC007: See All Link');
     
@@ -145,6 +147,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
       console.log('⚠️ TC007: See All link not found (normal)');
     }
   });
+
 
 
 
@@ -170,6 +173,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
 
 
+
   test('TC014: Slow Network', async ({ page }) => {
     console.log('🧪 TC014: Slow Network');
     
@@ -183,6 +187,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
     
     console.log('TC014 PASSED: Slow network handled');
   });
+
 
 
 
@@ -211,6 +216,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
 
 
+
   test('TC016: Category Filtering', async ({ page }) => {
     console.log('TC016: Category Filtering');
     
@@ -235,6 +241,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
 
 
 
+
   test('TC017: Invalid URL', async ({ page }) => {
     console.log('TC017: Invalid URL');
     
@@ -249,6 +256,7 @@ test.describe('eBay Similar Items - All Test Cases (TC001-TC018)', () => {
   });
 
 
+  
 
   test('TC018: Page Load Performance', async ({ page }) => {
     console.log('TC018: Load Performance');

@@ -2,8 +2,6 @@
 
 cd /surge-qa-assessment
 
-# eBay Similar Items - QA Automation Framework
-
 ## 📋 QA Assessment Overview
 
 This project demonstrates automated testing for eBay's "Similar Items" functionality using **Playwright** and **TypeScript**.
